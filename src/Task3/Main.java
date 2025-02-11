@@ -9,8 +9,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws IOException {
         Scanner scanner = new Scanner(System.in);
-        //System.out.println("Введите путь к первому файлу:");
-        String filePath = "src/Task3/file.txt";
+        System.out.println("Введите путь к первому файлу:");
+        String filePath = scanner.nextLine();
 
         File file = new File(filePath);
         System.out.println("Введите массив целых чисел:");
@@ -32,7 +32,7 @@ public class Main {
         FileIO.writeIntToFile(filePath,evenArray);
         FileIO.writeIntToFile(filePath,oddArray);
         FileIO.writeIntToFile(filePath,reverseArray);
-
+        scanner.close();
 
 
 
