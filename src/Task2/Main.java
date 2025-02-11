@@ -18,9 +18,34 @@ public class Main {
         for (int value : secondArray) {
             System.out.print(value + " ");
         }
-        ArrayAnalyzer arrayAnalyzer = new ArrayAnalyzer(firstArray, secondArray);
-        int max = arrayAnalyzer.maxValue(firstArray,secondArray,firstArray.length,secondArray.length);
-        System.out.println("\nМаксимальное значение из двух массивов: "+ max);
 
+        ArrayAnalyzer arrayAnalyzer = new ArrayAnalyzer(firstArray, secondArray);
+
+        int maxFirstArrayValue = arrayAnalyzer.maxArrayValue(firstArray,firstArray.length);
+        System.out.println("\nМаксимальное значение первого массива: "+ maxFirstArrayValue);
+
+        int minFirstValue = arrayAnalyzer.minArrayValue(firstArray,firstArray.length);
+        System.out.println("Минимальное значение первого массива: "+ minFirstValue);
+
+        int sumFirstArray = arrayAnalyzer.elementArraySum(firstArray, firstArray.length);
+        System.out.println("Cумма элементов первого массива: "+ sumFirstArray);
+
+        int maxSecondArrayValue = arrayAnalyzer.maxArrayValue(secondArray,secondArray.length);
+        System.out.println("\nМаксимальное значение второго массива: "+ maxSecondArrayValue);
+
+        int minSecondValue = arrayAnalyzer.minArrayValue(secondArray,secondArray.length);
+        System.out.println("Минимальное значение второго массива: "+ minSecondValue);
+
+        int sumSecondArray = arrayAnalyzer.elementArraySum(secondArray, secondArray.length);
+        System.out.println("Cумма элементов первого массива: "+ sumSecondArray);
+
+        int max = arrayAnalyzer.maxValue(firstArray,secondArray,firstArray.length,secondArray.length);
+        System.out.println("\nММаксимальное значение из двух массивов: "+ max);
+
+        int min = arrayAnalyzer.minValue(firstArray,secondArray,firstArray.length,secondArray.length);
+        System.out.println("Минимальное значение из двух массивов: "+ min);
+
+        int sum = arrayAnalyzer.elementSum(firstArray,secondArray,firstArray.length,secondArray.length);
+        System.out.println("Общая сумма элементов массивов: "+ sum);
     }
 }
