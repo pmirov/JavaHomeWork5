@@ -15,25 +15,17 @@ public class ArrayReader {
         this.filePath = filePath;
     }
 
-    public int[] readFirstArray() throws IOException {
+    public int[] readArray(int index) throws IOException {
         List<String> stringArrays = readLines();
-        String[] firstArrayStr = stringArrays.getFirst().split("\\s");
-        int[] firstArray = new int[firstArrayStr.length];
-        for (int i = 0; i < firstArrayStr.length; i++) {
-            firstArray[i] = Integer.parseInt(firstArrayStr[i]);
+        String[] arrayStr = stringArrays.get(index).split("\\s");
+        int[] array = new int[arrayStr.length];
+        for (int i = 0; i < arrayStr.length; i++) {
+            array[i] = Integer.parseInt(arrayStr[i]);
         }
-        return firstArray;
+        return array;
     }
 
-    public int[] readSecondArray() throws IOException {
-        List<String> stringArrays = readLines();
-        String[] secondArrayStr = stringArrays.getLast().split("\\s");
-        int[] secondArray = new int[secondArrayStr.length];
-        for (int i = 0; i < secondArrayStr.length; i++) {
-            secondArray[i] = Integer.parseInt(secondArrayStr[i]);
-        }
-        return secondArray;
-    }
+
     private List<String> readLines() throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader((filePath)));
         List<String> stringArrays = new ArrayList<>();
